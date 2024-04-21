@@ -1,0 +1,13 @@
+#docker run --name flame -p 5005:5005 -v /opt/flame/data:/app/data -e PASSWORD=flame_password
+
+services:
+  flame:
+    image: pawelmalak/flame
+    container_name: flame
+    ports:
+      - '5005:5005'
+#    volumes:
+#      - 'opt/flame/data:/app/data'
+    environment:
+      - PASSWORD=flame_password
+    restart: unless-stopped
